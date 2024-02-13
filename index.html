@@ -11,8 +11,12 @@
 </head>
 <body class="lg:m-12">
     <header>
-        <nav>
-
+        <nav class="flex justify-between bg-green-200 p-10 rounded-lg mt-10 mb-10">
+          <div>
+            <h1 class="text-5xl font-bold">Interactive</h1>
+            <p class="text-xl font-bold text-gray-600">Geometry Genius</p>
+          </div>
+          <div><button class="btn btn-primary">Blog</button></div>
         </nav>
     </header>
 
@@ -29,18 +33,17 @@
                         <div class="grid grid-cols-2 pb-7">
 
                             <div class="flex">
-                                <input type="text" placeholder="h" class="input-sm w-full">
+                                <input id="base" type="text" placeholder="b" class="input-sm w-full">
                                 <span class="inline">cm</span>
                              </div>
 
                              <div class="flex">
-                                <input type="text" placeholder="b" class="input-sm w-full">
+                                <input id="height" type="text" placeholder="h" class="input-sm w-full">
                                 <span class="inline">cm</span>
                              </div>
                         </div>
-
                       <div class="card-actions">
-                        <button class="btn btn-primary w-full text-white">Calculate</button>
+                        <button id="btn-triangle" class="btn btn-primary w-full text-white">Calculate</button>
                       </div>
 
                     </div>
@@ -52,22 +55,22 @@
                     <figure class="p-7"><img src="images/rectangle.png" alt="Rectangle" /></figure>
                     <div class="card-body">
                       <h2 class="text-center text-2xl font-bold">Rectangle</h2>
-                      <p class="text-center">Area(A) = w x l</p>
+                      <p class="text-center">Area(A) = W x L</p>
                         <div class="grid grid-cols-2 pb-7">
 
                             <div class="flex">
-                                <input type="text" placeholder="W" class="input-sm w-full">
-                                <span class="inline">w</span>
+                                <input id="width" type="text" placeholder="W" class="input-sm w-full">
+                                <span class="inline">W</span>
                              </div>
 
                              <div class="flex">
-                                <input type="text" placeholder="l" class="input-sm w-full">
+                                <input id="length" type="text" placeholder="L" class="input-sm w-full">
                                 <span class="inline">L</span>
                              </div>
                         </div>
-
+                        
                       <div class="card-actions">
-                        <button class="btn btn-primary w-full  text-white">Calculate</button>
+                        <button onclick="rectangleCalculation()" class="btn btn-primary w-full  text-white">Calculate</button>
                       </div>
 
                     </div>
@@ -75,7 +78,7 @@
             </div>
             <!-- parallelogram -->
             <div>
-                <div class="card w-full bg-base-100 shadow-xl">
+                <div class="card w-full bg-base-100 shadow-xl"> 
                     <figure class="p-7"><img src="images/parallelogram.png" alt="parallelogram"/></figure>
                     <div class="card-body">
                       <h2 class="text-center text-2xl font-bold">Parallelogram</h2>
@@ -83,18 +86,17 @@
                         <div class="grid grid-cols-2 pb-7">
 
                             <div class="flex">
-                                <input type="text" placeholder="b" class="input-sm w-full">
+                                <input id="baseParallelogram" type="text" placeholder="B" class="input-sm w-full">
                                 <span class="inline">cm</span>
                              </div>
 
                              <div class="flex">
-                                <input type="text" placeholder="h" class="input-sm w-full">
+                                <input id="heightParallelogram" type="text" placeholder="H" class="input-sm w-full">
                                 <span class="inline">cm</span>
                              </div>
                         </div>
-
                       <div class="card-actions">
-                        <button class="btn btn-primary w-full text-white">Calculate</button>
+                        <button onclick="parallelogramCalculation()" class="btn btn-primary w-full text-white">Calculate</button>
                       </div>
 
                     </div>
@@ -110,18 +112,17 @@
                         <div class="grid grid-cols-2 pb-7">
 
                             <div class="flex">
-                                <input type="text" placeholder="b" class="input-sm w-full">
+                                <input id="baseRhombus" type="text" placeholder="b" class="input-sm w-full">
                                 <span class="inline">cm</span>
                              </div>
 
                              <div class="flex">
-                                <input type="text" placeholder="h" class="input-sm w-full">
+                                <input id="heightRhombus" type="text" placeholder="h" class="input-sm w-full">
                                 <span class="inline">cm</span>
                              </div>
                         </div>
-
                       <div class="card-actions">
-                        <button class="btn btn-primary w-full text-white">Calculate</button>
+                        <button onclick="rhombusAreaCalculate()" class="btn btn-primary w-full text-white">Calculate</button>
                       </div>
 
                     </div>
@@ -137,18 +138,18 @@
                         <div class="grid grid-cols-2 pb-7">
 
                             <div class="flex">
-                                <input type="text" placeholder="b" class="input-sm w-full">
+                                <input id="basePentagon" type="text" placeholder="b" class="input-sm w-full">
                                 <span class="inline">cm</span>
                              </div>
 
                              <div class="flex">
-                                <input type="text" placeholder="h" class="input-sm w-full">
+                                <input id="heightPentagon" type="text" placeholder="h" class="input-sm w-full">
                                 <span class="inline">cm</span>
                              </div>
                         </div>
-
+                        
                       <div class="card-actions">
-                        <button class="btn btn-primary w-full text-white">Calculate</button>
+                        <button onclick="areaCalculationPentagon()" class="btn btn-primary w-full text-white">Calculate</button>
                       </div>
 
                     </div>
@@ -160,22 +161,21 @@
                     <figure class="p-7"><img src="images/ellipse.png" alt="parallelogram"/></figure>
                     <div class="card-body">
                       <h2 class="text-center text-2xl font-bold">Ellipse</h2>
-                      <p class="text-center">Area(A) = PI x ab</p>
+                      <p class="text-center">Area(A) = Π x ab</p>
                         <div class="grid grid-cols-2 pb-7">
 
                             <div class="flex">
-                                <input type="text" placeholder="b" class="input-sm w-full">
+                                <input id="areaEllipse" type="text" placeholder="a" class="input-sm w-full">
                                 <span class="inline">cm</span>
                              </div>
 
                              <div class="flex">
-                                <input type="text" placeholder="h" class="input-sm w-full">
+                                <input id="baseEllipse" type="text" placeholder="b" class="input-sm w-full">
                                 <span class="inline">cm</span>
                              </div>
                         </div>
-
                       <div class="card-actions">
-                        <button class="btn btn-primary w-full text-white">Calculate</button>
+                        <button id="btn-ellipse" class="btn btn-primary w-full text-white">Calculate</button>
                       </div>
 
                     </div>
@@ -185,8 +185,12 @@
         <!-- area calculation -->
           <div class="lg:w-96 border-2 rounded-lg ml-6">
             <h1 class="text-xl font-bold text-center">Area calculation</h1>
+            <div class="text-center">
+              <p>Area: <span id="output"></span> <span>cm<sup>2</sup></spa></p>
+            </div>
         </div>
     </main>
 
+  <script src="script/geometry-calculation.js"></script>
 </body>
 </html>
